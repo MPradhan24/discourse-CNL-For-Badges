@@ -3,6 +3,15 @@
   DiscourseCNLForBadges is a plugin for automatically converting a query written in CNL(Controlled Natural Language) to SQL(Structured Query Language) for badge awarding to users. CNL is a subset of Natural language, and hence has restricted syntax and restricted semantics. The CNL syntax used in this plugin is inspired from Attempto Controlled English(ACE), which is like English and is very easy to learn and use. In Attempto Parsing Engine(APE),which is a parser that implements the construction and interpretation rules of ACE, markers like a: and n: are used to mark the adjectives and nouns respectively in order to dismiss the confusion regarding unknown words, as ACE like any other CNL has restricted semantics. Deriving from this, we have made use of markers like t:, b: and g: in order to identify tag-names, badge-names and group-names respectively.
   The badge awarding criteria could therefore be written even if proficiency at SQL is not obtained. This would be highly advantageous.
   
+## Plugin Outlet Code to be Added in badges-show.hbs just after the 'long_description' div code
+
+{{#if siteSettings.enable_badge_sql}}
+      {{plugin-outlet name="cnl-for-badges-textbox"
+                  args=(hash readOnly=readOnly)
+                  tagName=""
+                  connectorTagName="span"}}
+ {{/if}}
+  
 
 ## Installation
 
