@@ -5,11 +5,17 @@
   
 ## Plugin Outlet Code to be Added in badges-show.hbs just after the 'long_description' div code
 
+
 {{#if siteSettings.enable_badge_sql}}
+
       {{plugin-outlet name="cnl-for-badges-textbox"
+      
                   args=(hash readOnly=readOnly)
+                  
                   tagName=""
+                  
                   connectorTagName="span"}}
+ 
  {{/if}}
   
 
